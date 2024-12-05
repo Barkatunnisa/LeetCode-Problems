@@ -1,0 +1,18 @@
+class Solution {
+    public boolean isHappy(int n) {
+        if (n<9 && n!=1 && n!=7){
+            return false;
+        }
+        int s=0;
+        while(n>0){
+            s+=((n%10)*(n%10));
+            n=n/10;
+        }
+        if(s==1){
+            return true;
+        }
+        else{
+            return isHappy(s);
+        }
+    }
+}
